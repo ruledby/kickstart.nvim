@@ -3,7 +3,7 @@ return {
   'WhoIsSethDaniel/mason-tool-installer.nvim',
   opts = {
     ensure_installed = {
-      'ruff',
+      'flake8',
       -- other linters/formatters
     },
     auto_update = false,
