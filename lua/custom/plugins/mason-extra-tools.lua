@@ -1,4 +1,3 @@
-print 'mason-extra-tools loaded!'
 return {
   'WhoIsSethDaniel/mason-tool-installer.nvim',
   opts = {
