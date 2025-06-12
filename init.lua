@@ -1020,3 +1020,6 @@ vim.opt.timeoutlen = 300
 
 -- Map 'jj' to Escape in insert mode
 vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = true, silent = true })
+
+-- adding custom/autocmds folder
+pcall(require, 'custom.autocmds')
