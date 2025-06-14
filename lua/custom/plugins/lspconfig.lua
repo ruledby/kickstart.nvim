@@ -1,24 +1,6 @@
 return {
   {
-    'williamboman/mason.nvim',
-    opts = function(_, opts)
-      opts.ensure_installed = opts.ensure_installed or {}
-      vim.list_extend(opts.ensure_installed, {
-        'css-lsp',
-        'eslint-lsp',
-        'flake8',
-        'html-lsp',
-        'lua-language-server',
-        'pyright',
-        'stylua',
-        'typescript-language-server',
-      })
-    end,
-  },
-
-  {
     'williamboman/mason-lspconfig.nvim',
-    dependencies = { 'williamboman/mason.nvim' },
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
       vim.list_extend(opts.ensure_installed, {
@@ -36,6 +18,8 @@ return {
     'neovim/nvim-lspconfig',
     opts = function(_, opts)
       opts.servers = opts.servers or {}
+
+      -- Only set up servers if they weren't already defined by Kickstart defaults
       opts.servers.cssls = opts.servers.cssls or {}
       opts.servers.eslint = opts.servers.eslint or {}
       opts.servers.html = opts.servers.html or {}
