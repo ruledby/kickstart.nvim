@@ -1,5 +1,4 @@
 return {
-  -- Extend Mason to install non-LSP tools
   {
     'williamboman/mason.nvim',
     opts = function(_, opts)
@@ -17,9 +16,9 @@ return {
     end,
   },
 
-  -- Extend Mason-lspconfig to install LSP servers
   {
     'williamboman/mason-lspconfig.nvim',
+    dependencies = { 'williamboman/mason.nvim' },
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
       vim.list_extend(opts.ensure_installed, {
@@ -33,7 +32,6 @@ return {
     end,
   },
 
-  -- Optional: make sure lspconfig knows to configure these servers
   {
     'neovim/nvim-lspconfig',
     opts = function(_, opts)
